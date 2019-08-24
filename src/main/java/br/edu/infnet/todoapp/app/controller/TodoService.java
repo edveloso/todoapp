@@ -1,11 +1,11 @@
-package todoapp.controller;
+package br.edu.infnet.todoapp.app.controller;
 
 import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.stereotype.Service;
 
-import todoapp.model.Todo;
+import br.edu.infnet.todoapp.app.model.Todo;
 
 
 

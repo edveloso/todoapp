@@ -1,13 +1,12 @@
-package todoapp.controller;
+package br.edu.infnet.todoapp.app.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
-import todoapp.model.Todo;
+import br.edu.infnet.todoapp.app.model.Todo;
 
 @Controller
 public class TodoController {
@@ -33,20 +32,6 @@ public class TodoController {
 		service.persite(todo);
 		return "redirect:todos";
 	}
-	
-	@RequestMapping(value = "/edit/{id}", method = RequestMethod.POST)
-	public String edit(@PathVariable("id") String id,   Model model) {
-		
-		return "todos/edit";
-	}
-	
-	
-	
-	
-
-
-	
-	
 	
 	
 	public TodoService getService() {
