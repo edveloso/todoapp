@@ -12,7 +12,7 @@ import br.edu.infnet.todoapp.app.model.Todo;
 @Service
 public class TodoService {
  
-	private List<Todo> repositorio;
+	private static List<Todo> repositorio;
 	
 	public TodoService() {
 		repositorio = new ArrayList<Todo>();
@@ -25,6 +25,14 @@ public class TodoService {
 
 	public void persite(Todo todo) {
 		repositorio.add(todo);
+	}
+
+	public void update(Todo todo) {
+		repositorio.add(todo);		
+	}
+
+	public Todo getTodo(String id) {
+		return repositorio.get(Integer.parseInt(id));
 	}
 
 }

@@ -5,6 +5,8 @@
 </head>
 <body>
 <h2>Hello World!</h2>
-<a href="todos">Todos</a>
+<a href="todos/list">Todos</a>
+<br/>
+<a href="todos/form">Criar nova tarefa</a>
 </body>
 </html>
