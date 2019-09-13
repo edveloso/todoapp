@@ -17,6 +17,14 @@ public class TodoDao {
 	public void salvar(Todo todo) {
 		em.persist(todo);
 	}
+
+	public void atualizar(Todo todo) {
+		em.merge(todo);
+	}
+	
+	public Todo getTodo(Integer id) {
+		return em.find(Todo.class, id);
+	}
 	
 	public List<Todo> getAll(){
 		return em.createQuery(" select t from Todo t ").getResultList();

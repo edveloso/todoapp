@@ -15,6 +15,7 @@
    <h2>Editar Tarefa</h2>
    <form action="<c:url value="/todos/update" />" method="post">
       <label for="tarefa">Tarefa</label>
+      <input type="hidden" value="${todo.id}" name="id" id="id" />
       <input type="text" value="${todo.tarefa}" name="tarefa" id="tarefa" size="200">
       <br/>
       

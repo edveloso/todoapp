@@ -26,7 +26,7 @@
 			<tr>
 				<td>${todo.tarefa}</td>
 				<td>${todo.pronto}</td>
-	<td><a href="<c:url value="/todos/edit/${loop.index}" />" >Edit</a></td>
+	<td><a href="<c:url value="/todos/edit/${todo.id}" />" >Edit</a></td>
 			</tr>
 		</c:forEach>
 	</table>
