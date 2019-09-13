@@ -3,6 +3,7 @@ package br.edu.infnet.todoapp;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.ImportResource;
 import org.springframework.web.servlet.ViewResolver;
 import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 import org.springframework.web.servlet.config.annotation.ResourceHandlerRegistry;
@@ -13,6 +14,7 @@ import org.springframework.web.servlet.view.JstlView;
 @Configuration
 @EnableWebMvc
 @ComponentScan(basePackages = "br.edu.infnet.todoapp.app")
+@ImportResource("classpath:service-orm.xml")
 public class AppConfig extends WebMvcConfigurerAdapter{
 
 	@Bean(name="viewResolver")
@@ -26,6 +28,7 @@ public class AppConfig extends WebMvcConfigurerAdapter{
 	
 	@Override
     public void addResourceHandlers(ResourceHandlerRegistry registry) {
-        registry.addResourceHandler("/resources/**").addResourceLocations("/resources/");
+        registry.addResourceHandler("/resources/**")
+        					.addResourceLocations("/resources/");
     }
 }

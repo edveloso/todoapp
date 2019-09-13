@@ -11,8 +11,11 @@
 <title>Insert title here</title>
 </head>
 <body>
-	Page List Todo
-	<table>
+	
+	<h2>Page List Todo</h2>
+	<h3><a href="<c:url value="/todos/form" />"  >Criar nova tarefa</a></h3>
+	
+	<table border="1" width="100%" cellpadding="1" cellspacing="1"  >
 		<tr>
 			<th>Tarefa</th>
 			<th>Status</th>
@@ -23,7 +26,7 @@
 			<tr>
 				<td>${todo.tarefa}</td>
 				<td>${todo.pronto}</td>
-				<td><a href="<c:url value="/todos/edit/${loop.index}" />" >Edit</a></td>
+	<td><a href="<c:url value="/todos/edit/${loop.index}" />" >Edit</a></td>
 			</tr>
 		</c:forEach>
 	</table>
