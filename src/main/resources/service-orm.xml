@@ -15,14 +15,13 @@
 
 	<bean id="entityManagerFactory"
 		class="org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean">
-		<property name="persistenceXmlLocation" value="classpath:/persistence.xml" />
 		<property name="persistenceUnitName" value="mitjava" />
 		<property name="dataSource" ref="dataSource" />
 		<property name="jpaVendorAdapter" ref="jpaVendorAdapter" />
 		<property name="jpaDialect" ref="jpaDialect" />
 		<property name="jpaProperties">
 			<props>
-				<prop key="hibernate.hbm2ddl.auto">create-drop</prop>
+				<prop key="hibernate.hbm2ddl.auto">update</prop>
 			</props>
 		</property>
 	</bean>
@@ -47,7 +46,7 @@
 		class="org.springframework.jdbc.datasource.DriverManagerDataSource">
 		<property name="driverClassName" value="com.mysql.jdbc.Driver" />
 		<property name="url"
-			value="jdbc:mysql://localhost/aula01?useTimezone=true&amp;serverTimezone=UTC" />
+	value="jdbc:mysql://localhost/aula01?createDatabaseIfNotExist=true&amp;useTimezone=true&amp;serverTimezone=UTC" />
 		<property name="username" value="root" />
 		<property name="password" value="root" />
 	</bean>

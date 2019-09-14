@@ -18,6 +18,20 @@ public class TodoDao {
 		em.persist(todo);
 	}
 	
+	public void editar(Todo todo) {
+		em.merge(todo);
+	}
+	
+	public void delete(Integer id) {
+		em.remove(getTodo(id));
+	}
+	
+	
+	public Todo getTodo(Integer id) {
+		return em.find(Todo.class, id);
+	}
+	
+	
 	public List<Todo> getAll(){
 		return em.createQuery(" select t from Todo t ").getResultList();
 	}

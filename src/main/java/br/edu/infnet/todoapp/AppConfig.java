@@ -14,7 +14,7 @@ import org.springframework.web.servlet.view.JstlView;
 @Configuration
 @EnableWebMvc
 @ComponentScan(basePackages = "br.edu.infnet.todoapp.app")
-@ImportResource("classpath:service-orm.xml")
+@ImportResource("classpath:**/service-orm.xml")
 public class AppConfig extends WebMvcConfigurerAdapter{
 
 	@Bean(name="viewResolver")
