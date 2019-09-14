@@ -10,6 +10,7 @@ import org.springframework.transaction.annotation.Transactional;
 
 import br.edu.infnet.todoapp.app.model.Todo;
 import br.edu.infnet.todoapp.app.model.TodoDao;
+import br.edu.infnet.todoapp.app.model.UsuarioDao;
 
 
 
@@ -18,6 +19,9 @@ public class TodoService {
  
 	@Autowired
 	private TodoDao dao;
+
+	private UsuarioDao usuarioDao;
+	
 	
 	public TodoService() {
 	}
@@ -29,6 +33,7 @@ public class TodoService {
 
 	@Transactional(propagation = Propagation.REQUIRED)
 	public void persite(Todo todo) {
+		usuarioDao.sa
 		dao.salvar(todo);
 	}
 
