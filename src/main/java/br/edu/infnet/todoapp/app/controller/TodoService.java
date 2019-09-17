@@ -9,8 +9,8 @@ import org.springframework.transaction.annotation.Propagation;
 import org.springframework.transaction.annotation.Transactional;
 
 import br.edu.infnet.todoapp.app.model.Todo;
-import br.edu.infnet.todoapp.app.model.TodoDao;
-import br.edu.infnet.todoapp.app.model.UsuarioDao;
+import br.edu.infnet.todoapp.app.model.persistence.TodoDao;
+import br.edu.infnet.todoapp.app.model.persistence.UsuarioDao;
 
 
 
@@ -33,7 +33,6 @@ public class TodoService {
 
 	@Transactional(propagation = Propagation.REQUIRED)
 	public void persite(Todo todo) {
-		usuarioDao.sa
 		dao.salvar(todo);
 	}
 
@@ -52,7 +51,7 @@ public class TodoService {
 		Objects.requireNonNull(id, "vai para lá com esse id nullo");
 		
 		Integer integer = Integer.valueOf(id);
-		return dao.getTodo(integer);
+		return dao.findOne(integer);
 	}
 
 	public TodoDao getDao() {
