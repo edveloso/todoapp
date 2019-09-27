@@ -33,7 +33,6 @@ public class TodoService {
 
 	@Transactional(propagation = Propagation.REQUIRED)
 	public void persite(Todo todo) {
-		usuarioDao.sa
 		dao.salvar(todo);
 	}
 
