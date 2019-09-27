@@ -9,8 +9,8 @@ import org.springframework.transaction.annotation.Propagation;
 import org.springframework.transaction.annotation.Transactional;
 
 import br.edu.infnet.todoapp.app.model.Todo;
-import br.edu.infnet.todoapp.app.model.TodoDao;
-import br.edu.infnet.todoapp.app.model.UsuarioDao;
+import br.edu.infnet.todoapp.app.model.persistence.TodoDao;
+import br.edu.infnet.todoapp.app.model.persistence.UsuarioDao;
 
 
 
@@ -20,9 +20,6 @@ public class TodoService {
 	@Autowired
 	private TodoDao dao;
 
-	private UsuarioDao usuarioDao;
-	
-	
 	public TodoService() {
 	}
 	
@@ -43,7 +40,7 @@ public class TodoService {
 
 	@Transactional(propagation = Propagation.REQUIRED)
 	public void delete(Integer id) {
-		dao.delete(id);
+		dao.deletar(id);
 	}
 
 	@Transactional(propagation = Propagation.NEVER)
@@ -51,7 +48,7 @@ public class TodoService {
 		Objects.requireNonNull(id, "vai para lá com esse id nullo");
 		
 		Integer integer = Integer.valueOf(id);
-		return dao.getTodo(integer);
+		return dao.findOne(integer);
 	}
 
 	public TodoDao getDao() {
