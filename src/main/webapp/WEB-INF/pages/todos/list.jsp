@@ -24,7 +24,7 @@
 	<h3><a href="<c:url value="/todos/form" />"  >Criar nova tarefa</a></h3>
 	
 	<table class="table" >
-	<thead>
+	<thead class="thead-dark">
 		<tr>
 			<th>Tarefa</th>
 			<th>Status</th>
