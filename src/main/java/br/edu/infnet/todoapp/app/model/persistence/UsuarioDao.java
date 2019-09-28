@@ -7,9 +7,7 @@ import br.edu.infnet.todoapp.app.model.Usuario;
 @Repository
 public class UsuarioDao extends JpaDao<Usuario> {
 
-	public UsuarioDao() {
-		super(Usuario.class);
-	}
+	
 	
 	
 	

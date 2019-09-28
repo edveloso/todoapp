@@ -1,5 +1,6 @@
 package br.edu.infnet.todoapp.app.model.persistence;
 
+import java.lang.reflect.ParameterizedType;
 import java.util.List;
 
 import javax.persistence.EntityManager;
@@ -18,12 +19,10 @@ public abstract class JpaDao<T> implements IDAO<T> {
 	private Class<T> classe;
 	
 	public JpaDao() {
-		
+	  this.classe = (Class<T>) ((ParameterizedType)getClass()
+			  		.getGenericSuperclass()).getActualTypeArguments()[0];
 	}
 	
-	public JpaDao(Class<T> classe) {
-		this.classe = classe;
-	}
 
 	public void salvar(T t) {
 		em.persist(t);

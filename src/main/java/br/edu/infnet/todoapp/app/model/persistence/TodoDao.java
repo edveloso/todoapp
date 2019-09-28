@@ -7,9 +7,8 @@ import br.edu.infnet.todoapp.app.model.Todo;
 @Repository
 public class TodoDao extends JpaDao<Todo> {
 
-	public TodoDao() {
-		super(Todo.class);
-	}
+	
+	
 	
 	
 	
